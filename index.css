@@ -53,6 +53,7 @@ body {
 
 /* сектор колеса */
 .spinner {
+  border: 1px #0693e3 solid;
   /* добавляем относительное позиционирование */
   position: relative;
   /* подключаем сетку */
@@ -91,8 +92,9 @@ body {
   transform: rotate(var(--rotate));
   /* запрещаем пользователю выделять мышкой текст на секторах */
   user-select: none;
-  /* устанавливаем цвет текста */
-  color: black;
+}
+.prize .text {
+  color: var(--color);
 }
 
 /* язычок */

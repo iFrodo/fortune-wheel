@@ -62,17 +62,17 @@ let prizeNodes;
 
 // расставляем текст по секторам
 const createPrizeNodes = () => {
-  // обрабатываем каждую подпись
   prizes.forEach(({ text, color }, i) => {
-    // каждой из них назначаем свой угол поворота
     const rotation = ((prizeSlice * i) * -1) - prizeOffset;
-    console.log(rotation)
-    // добавляем код с размещением текста на страницу в конец блока spinner
+    console.log(rotation);
+
+    // Определяем цвет текста в зависимости от цвета сектора
+    let textColor = color === "#0693e3" ? "white" : "#0693e3";
+
     spinner.insertAdjacentHTML(
       "beforeend",
-      // текст при этом уже оформлен нужными стилями
       `<li class="prize" style="--rotate: ${rotation}deg; --color: ${color}">
-        <span class="text">${text}</span>
+        <span class="text" style="color: ${textColor}">${text}</span>
       </li>`
     );
   });
